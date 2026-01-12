@@ -1,0 +1,54 @@
+body{
+    box-sizing: border-box;
+    background-color: aliceblue;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+/*Toolbar*/
+.toolbar{
+    background-color: #1E90FF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgpa(0,0,0,0.2);
+}
+.toolbar img{
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+}
+.toolbar h1, input{
+    font-size: 1.5rem;
+    text-align: center;
+}
+.toolbar .buttons span{
+    padding: 7px;
+    margin: 4;
+    border-radius: 5px;
+    background-color: brown;
+    font-size: large;
+    font-weight: bold;
+    border-style: solid;
+    box-shadow: 4px 5px rgba(0, 0, 0,0.5);
+}
+/*Main*/
+
+/*Footer*/
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+}
+footer img{
+    width: 90px;
+    height: auto;
+}
+@media (max-width: 600px){
+    .toolbar{
+        flex-direction: column;
+    }
+}
