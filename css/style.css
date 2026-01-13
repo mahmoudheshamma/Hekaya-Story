@@ -51,4 +51,8 @@ footer img{
     .toolbar{
         flex-direction: column;
     }
+    .buttons{
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
 }
