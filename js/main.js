@@ -36,7 +36,7 @@ async function LoadData(){
    const snapshot = await get(ref(database, "story"));
    if(!snapshot.exists()) return;
    stories = Object.values(snapshot.val());
-   //
+   render();
 }
 
 function render(){
@@ -47,3 +47,5 @@ function render(){
 
    
 }
+
+console.log("Data", app);
