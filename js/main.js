@@ -31,6 +31,14 @@ document.getElementById("discord").addEventListener("click", ()=>{
 
  });
 
+ prevBtn.onclick = ()=> {
+   currentPage--;
+   render();
+ };
+ nextBtn.onclick = ()=> {
+   currentPage++;
+   render();
+ }
 // Firebase Init
 async function LoadData(){
    const snapshot = await get(ref(database, "story"));
@@ -44,8 +52,30 @@ function render(){
 
    const start = (currentPage -1) * PAGE_SIZE_LIMIT;
    const end = start + PAGE_SIZE_LIMIT;
-
    
+   stories.slice(start, end).forEach(story =>{
+      const card = document.createElement("div");
+      card.className = "card";
+      
+      card.innerHTML = `
+        <div class="headerStory">
+            <span class="StoryName">${story.name}</span>
+            <span class="StoryNumber"></span>
+        </div>
+        <div class="StoryInfo">
+            <span class="StoryType"></span>
+            <span class="StoryClass"></span>
+        </div>
+        <div class="StoryFooter">
+            <span class="StoryWriter"></span>
+            <span class="StoryRating"></span>
+        </div>
+      `;
+      CardList.appendChild(card);
+   });
+   pageinfo.textContent = `${currentPage} / ${Math.ceil(stories.length / PAGE_SIZE_LIMIT)}`;
+   nextBtn.disabled = end >= stories.length;
+   prevBtn.disabled = currentPage === 1;
 }
 
-console.log("Data", app);
+LoadData();
