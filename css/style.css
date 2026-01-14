@@ -1,4 +1,9 @@
+@font-face {
+    font-family: 'myFont';
+    src: url('../font/arabic_english.ttf') format('truetype');
+}
 body{
+    font-family: 'myFont';
     box-sizing: border-box;
     background-color: aliceblue;
     margin: 0;
@@ -21,38 +26,100 @@ body{
     object-fit: contain;
 }
 .toolbar h1, input{
+    font-style: italic;
     font-size: 1.5rem;
     text-align: center;
 }
 .toolbar .buttons span{
     padding: 7px;
-    margin: 4;
+    color: aliceblue;
+    margin: 5px;
     border-radius: 5px;
     background-color: brown;
     font-size: large;
-    font-weight: bold;
     border-style: solid;
     box-shadow: 4px 5px rgba(0, 0, 0,0.5);
 }
+.toolbar .buttons span:active{
+    transform: scale(0.6);
+    background-color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+/*choose*/
+.choose{
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+.choose select{
+    border:#0003ff;
+    border-radius: 5px;
+    font-weight: bold;
+    border-style: solid;
+    font-size: large;
+    background-color: azure;
+    margin: 10px;
+}
 /*Main*/
+.main{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.controller button{
+    font-family: 'myFont';
+    width: 80px;
+    height: 40px;
+    border-color: #0003ff;
+    border-radius: 7px;
+    border-style: double;
+    color: aliceblue;
+    background-color: #4CAF50;
 
+}
+.controller button:active{
+    transform: scale(0.9);
+    background-color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 /*Footer*/
 footer{
     display: flex;
-    justify-content: space-around;
+    direction: ltr;
+    justify-content: center;
     align-items: center;
     background-color: black;
+    color: white;
+    padding: 5px;
+}
+Footer div{
+    display: flex;  
+    flex-direction: column;
 }
 footer img{
-    width: 90px;
+    width: 50px;
     height: auto;
+    border: #0003ff;
+    border-width: 5px;
+    border-radius: 20px;
+    border-style: double;
+    margin: 10px;  
+    box-shadow: 4px 4px #ff0a0083;
 }
-@media (max-width: 600px){
+footer img:active{
+    transform: scale(0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px){
     .toolbar{
         flex-direction: column;
     }
-    .buttons{
-        margin-bottom: 10px;
-        margin-top: 10px;
+    header .buttons{
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+    header input{
+        margin-left: 30px;
+        margin-right: 30px;
     }
 }

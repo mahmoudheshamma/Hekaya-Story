@@ -15,31 +15,79 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <script type="module" src="js/firebaseConfig.js"></script>
     <script type="module" src="js/main.js"></script>
     
     <header>
         <div class="toolbar">
 
-            <img src="img/logo3.png" alt="logo">
-            <h1>Al-Eilm Hekaya</h1>
+            <img src="img/logo4.png" alt="logo">
+            <h1>العلم حكاية</h1>
             <input type="search" placeholder="بحث..." id="search">
             <div class="buttons">
-                <span>القائمة الرئيسية</span>
-                <span>الأقسام</span>
+                <span id="MainBtn">القائمة الرئيسية</span>
+                <span id="chooseBtn">الأقسام</span>
                 <span>نشر</span>
             </div>
 
         </div>
     </header>
 
-    <main>
+    <div class="choose">
 
-    </main>
+        <select id="order">
+            <option value="popularity">الاكثر شعبية</option>
+            <option value="newest">الاحدث</option>
+        </select>
+    
+        <select id="category">
+            <option value="story">رواية</option>
+            <option value="fayazer">فوازير</option>
+            <option value="Comec">نكت</option>
+            <option value="Talks">اقوال</option>
+        </select>
+    
+        <select id="type">
+            <option value="comedy">كوميدية</option>
+            <option value="history">تاريخية</option>
+            <option value="children">اطفال</option>
+            <option value="horror">رعب</option>
+            <option value="">تطوير ذات</option>
+            <option value="">خيال</option>
+            <option value="">ديني</option>
+            <option value="">حزين</option>
+            <option value="">دراما</option>
+            <option value="">تعليمية</option>
+            <option value="communication">اجتماعية</option>
+            <option value="love">رومانسية</option>
+        </select>
+
+    </div>
+
+    <div class="main">
+
+        <div id="list">
+        </div>
+
+      <div class="controller">
+          <button id="nextBtn">التالي</button>
+          <span id="pageInfo">10/10</span>
+          <button id="prevBtn">السابق</button>
+      </div>
+    
+    </div>
 
     <footer>
-        <img src="img/discord.png" alt="discord">
-        <img src="img/whatsapp.png" alt="whatsapp">
-        <img src="img/Facebook.png" alt="Facebook">
+        <div>
+            <img id="discord" src="img/discord.png" alt="discord">
+        </div>
+        <div>
+            <img id="whatsapp" src="img/whatsapp.png" alt="whatsapp">
+        </div>
+        <div>
+            <img id="Facebook" src="img/Facebook.png" alt="Facebook">
+        </div>
+
     </footer>
 
 </body>
