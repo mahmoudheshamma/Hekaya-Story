@@ -13,7 +13,7 @@ if(slug) {
 }else if (id) {
     key_story = { type: "id", value: id };
 } else {
-    window.location.href = "";
+    window.location.href = `../html/error.html`;
 }
 
 console.log(key_story);
