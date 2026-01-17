@@ -155,14 +155,16 @@ function render() {
 
     return true;
   });
-
-  // الترتيب
+  
   if (selectedOrder === "popularity") {
-    filteredStories.sort((a, b) => (parseInt(b.like || 0) - parseInt(a.like || 0)));
-  } else {
+    filteredStories.sort((a, b) => {
+        const scoreA = (parseInt(a.like || 0) * 0.7) + (parseFloat(a.rate || 0) * 0.3);
+        const scoreB = (parseInt(b.like || 0) * 0.7) + (parseFloat(b.rate || 0) * 0.3);
+        return scoreB - scoreA; // الأكبر أولًا
+    });
+} else {
     filteredStories.sort((a, b) => (parseInt(b.time_upload || 0) - parseInt(a.time_upload || 0)));
-  }
-
+}
   // الصفحات
   const totalPages = Math.max(Math.ceil(filteredStories.length / PAGE_SIZE_LIMIT), 1);
   currentPage = Math.min(currentPage, totalPages); // تأكد أن الصفحة الحالية لا تتجاوز العدد الكلي

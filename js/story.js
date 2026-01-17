@@ -16,4 +16,40 @@ if(slug) {
     window.location.href = `../html/error.html`;
 }
 
-console.log(key_story);
+async function fetchStory(key_story) {
+    if (!key_story) return null;
+    
+    try {
+        if (key_story.type === "id") {
+            const itemRef = ref(database, `story/${key_story.value}`);
+            const snapshot = await get(itemRef);
+            return snapshot.exists() ? snapshot.val() : null;
+        } else if (key_story.type === "slug") {
+            const productsRef = ref(database, "story");
+            const q = query(productsRef, orderByChild("slug"), equalTo(key_story.value));
+            const snapshot = await get(q);
+
+            if (snapshot.exists()) {
+                let data = null;
+                snapshot.forEach(child => {
+                    data = child.val();
+                });
+                return data;
+            } else {
+                return null;
+            }
+        }
+    } catch (error) {
+        console.error("خطأ في جلب البيانات:", error);
+        return null;
+    }
+}
+
+fetchStory(key_story).then(data => {
+    if (!data) {
+        window.location.href = `../html/error.html`;
+        return;
+    }
+    // Get Data data.n
+    document.title = data.name_story
+});
