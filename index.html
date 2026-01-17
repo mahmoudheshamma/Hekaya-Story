@@ -16,8 +16,8 @@
 </head>
 <body>
     <script type="module" src="js/firebaseConfig.js"></script>
-    <script type="module" src="js/main.js"></script>
-    
+    <script type="module" src="js/main.js"></script> 
+       
     <header>
         <div class="toolbar">
 
@@ -66,7 +66,62 @@
 
     <div class="main">
 
-        <div id="list">
+        <div id="list" class="list">
+            
+            <!--  -->
+            
+            <div class="story-card">
+                
+                <div class="headerStory">
+                
+                <h3 class="story-title">${story.name_story}</h3>
+                <span class="story-number">${story.num_story || ""}</span>
+            
+                </div>
+            
+                <div class="InfoStory">
+                
+                <span class="story-Type">${typeText}</span>
+                <span class="story-Class">${classText}</span>
+                
+                </div>
+            
+                <div class="FooterStory">
+                
+                <span class="storyWriter">${story.name_create}</span>
+                <span class="storyRate">${story.rate}</span>
+                
+                </div>
+                
+            </div>
+            
+            <div class="story-card">
+                
+                <div class="headerStory">
+                
+                <h3 class="story-title">${story.name_story}</h3>
+                <span class="story-number">${story.num_story || ""}</span>
+            
+                </div>
+            
+                <div class="InfoStory">
+                
+                <span class="story-Type">${typeText}</span>
+                <span class="story-Class">${classText}</span>
+                
+                </div>
+            
+                <div class="FooterStory">
+                
+                <span class="storyWriter">${story.name_create}</span>
+                <span class="storyRate">${story.rate}</span>
+                
+                </div>
+                
+            </div>
+            
+            <!--  -->
+            
         </div>
 
       <div class="controller">
