@@ -100,8 +100,6 @@ function buildStoryText(story){
 
 function render(){
    CardList.innerHTML = "";
-   
-   let num = 0;
 
    const start = (currentPage -1) * PAGE_SIZE_LIMIT;
    const end = start + PAGE_SIZE_LIMIT;
@@ -109,8 +107,11 @@ function render(){
    stories.slice(start, end).forEach(story =>{
       const card = document.createElement("div");
       card.className = "card";
-      num++;
       
+      card.addEventListener("click", () => {
+         window.location.href = `story.html?id=${story.id_story}`
+      });
+
       const { typeText, classText } = buildStoryText(story);
       
       card.innerHTML = `
@@ -119,7 +120,7 @@ function render(){
                 <div class="headerStory">
                 
                 <h3 class="story-title">${story.name_story}</h3>
-                <span class="story-number">${story.num_story || ""}</span>
+                <span class="story-number">${story.num_story}</span>
             
                 </div>
             
