@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'myFont', sans-serif;
+}
+
+@font-face {
+    font-family: 'myFont';
+    src: url('../font/arabic_english.ttf') format('truetype');
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    direction: rtl;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* شريط الأدوات */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    padding: 12px 25px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    flex-wrap: wrap;
+    transition: all 0.3s ease;
+}
+
+.toolbar img {
+    width: 80px;
+    object-fit: contain;
+}
+
+.toolbar h1 {
+    font-size: 1.6rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 6px rgba(255,255,255,0.2);
+}
+
+.toolbar .buttons span {
+    padding: 8px 16px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #00f0ff, #6a5aff);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+}
+
+.toolbar .buttons span:active {
+    transform: scale(0.95);
+}
+
+/* محتوى القصة */
+main {
+    padding: 20px;
+    flex: 1;
+}
+
+.story-header h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.story-meta {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    margin-bottom: 20px;
+}
+
+.story-content p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.story-rating {
+    font-size: 1rem;
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+/* متجاوب */
+@media (max-width: 768px) {
+    .toolbar {
+        flex-direction: column;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .toolbar .buttons {
+        margin: 10px 0;
+    }
+}

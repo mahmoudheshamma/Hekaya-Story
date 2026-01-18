@@ -7,9 +7,37 @@
     <link rel="stylesheet" href="../css/story.css">
 </head>
 <body>
+    <header>
+        <div class="toolbar">
+            <img src="../img/logo4.png" alt="Al-Eilm Hekaya">
+            <h1>العلم حكاية</h1>
+            <div class="buttons">
+                <span id="MainBtn">القائمة الرئيسية</span>
+            </div>            
+        </div>
+    </header>
+    
+    <main>
+        <div class="story-header">
+            <h1 id="title-story"></h1>
+            <div class="story-meta">
+                <span id="story-type"></span>
+                <span id="story-class"></span>
+                <span id="story-writer"></span>
+            </div>
+        </div>
+
+        <div class="story-content">
+            <p id="story"></p>
+        </div>
+
+        <div class="story-rating">
+            <span id="story-rate">تقييم القصة: 0</span>
+        </div>
+    </main>
+ 
+             
     <script type="module" src="../js/firebaseConfig.js"></script>
     <script type="module" src="../js/story.js"></script>
-    
-    
 </body>
 </html>

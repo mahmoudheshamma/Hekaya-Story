@@ -2,6 +2,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
 import { getDatabase } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+import { GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAwYs3xZW84Yy0Z2_DXk8FLUBJtShDQUoA",
@@ -17,5 +19,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const database = getDatabase(app);
+const auth = getAuth(app);
 
-export { app, analytics, database };
+export { app, analytics, database, auth };
+export const googleProvider = new GoogleAuthProvider();
